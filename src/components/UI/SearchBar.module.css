@@ -6,6 +6,8 @@
 }
 
 #search-box > input {
+  font-family: Bitter, sans-serif;
+  font-weight: 350;
   background-color: rgb(252, 251, 188);
   width: 20rem;
   padding: 0.6rem;
