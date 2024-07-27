@@ -1,21 +1,29 @@
 import styles from "./SearchBar.module.css";
 import SearchIcon from "../../assets/search-icon.svg";
 import { useRef } from "react";
+import { searchVehicles } from "../../http/vehicles";
+import { useStoreDispatch } from "../../store/hooks";
+import { setVehicles } from "../../store/vehicleSlice";
 
 export default function SearchBar() {
+  const dispatch = useStoreDispatch();
   const searchBar = useRef<HTMLInputElement>(null);
 
   function onSearch() {
-    if (searchBar.current && !searchBar.current.value)
-      searchBar.current.focus();
-    else if (searchBar.current) {
-      // TODO search the database
+    if (searchBar.current) {
+      searchVehicles(searchBar.current.value).then((vehicles) =>
+        dispatch(setVehicles(vehicles))
+      );
     }
   }
 
   return (
     <div id={styles["search-box"]}>
-      <input placeholder="Search" ref={searchBar}></input>
+      <input
+        onKeyUp={(e) => e.key === "Enter" && onSearch()}
+        placeholder="Search"
+        ref={searchBar}
+      ></input>
       <button onClick={onSearch}>
         <img src={SearchIcon} width={15} alt="search button" />
       </button>
