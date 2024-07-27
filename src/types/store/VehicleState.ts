@@ -1,5 +1,8 @@
+import type Vehicle from "../Vehicle";
+
 type VehicleState = {
-  // TODO
+  vehicles: Vehicle[];
+  vehicle: Vehicle;
 };
 
 export default VehicleState;

@@ -1,10 +1,7 @@
-import { type ComponentPropsWithoutRef, type ReactNode } from "react";
+import { type ComponentPropsWithoutRef } from "react";
 import { type LinkProps } from "react-router-dom";
+import type Children from "../Children";
 
-type BaseProps = {
-  children: ReactNode;
-};
-
-export type NavLinkProps = { to?: string } & BaseProps & LinkProps;
-export type ButtonProps = { to?: never } & BaseProps &
+export type NavLinkProps = { to?: string } & Children & LinkProps;
+export type ButtonProps = { to?: never } & Children &
   ComponentPropsWithoutRef<"button">;
