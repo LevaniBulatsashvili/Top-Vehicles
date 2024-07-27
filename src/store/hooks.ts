@@ -6,5 +6,5 @@ import {
 import type RootState from "../types/store/RootState";
 import type DispatchFunction from "../types/store/DispatchFunction";
 
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-export const useAppDispatch: DispatchFunction = useDispatch;
+export const useStoreSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useStoreDispatch: DispatchFunction = useDispatch;

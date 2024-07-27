@@ -1,16 +1,24 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type VehicleState from "../types/store/VehicleState";
+import type Vehicle from "../types/Vehicle";
+import { vehicle } from "./InitialState";
 
 const initialState: VehicleState = {
-  // TODO
+  vehicles: [],
+  vehicle,
 };
 
 export const vehicleSlice = createSlice({
   name: "vehicle",
   initialState,
   reducers: {
-    // todo(state, action: PayloadAction<T>) {},
+    setVehicles(state, action: PayloadAction<Vehicle[]>) {
+      state.vehicles = action.payload;
+    },
+    setVehicle(state, action: PayloadAction<Vehicle>) {
+      state.vehicle = action.payload;
+    },
   },
 });
 
-export const {} = vehicleSlice.actions;
+export const { setVehicles, setVehicle } = vehicleSlice.actions;

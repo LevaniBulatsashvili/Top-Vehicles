@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Galada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Bitter:ital,wght@0,100..900;1,100..900&family=Galada&display=swap");
 
 * {
   margin: 0px;
@@ -17,4 +17,5 @@ ul {
 
 body {
   min-height: 100vh;
+  background-color: rgb(250, 230, 219);
 }
