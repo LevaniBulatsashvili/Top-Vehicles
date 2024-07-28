@@ -1,0 +1,147 @@
+#form {
+  width: 40%;
+  min-height: 45vh;
+  background-color: rgba(34, 68, 119, 0.55);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-top: 5rem;
+}
+
+#display {
+  width: 60%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+#display > h1 {
+  font-size: 2rem;
+  color: rgba(0, 9, 54, 0.85);
+  font-family: Bitter;
+  margin: 2rem 0 1rem 0;
+  font-weight: 800;
+}
+
+#display > input {
+  width: 100%;
+  font-size: 1rem;
+  font-family: Bitter;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+#display > input:hover {
+  border: 2px solid rgb(34, 73, 189);
+  border-radius: 3px;
+}
+
+#display > div > p {
+  font-family: Bitter;
+  font-weight: 600;
+  color: rgba(255, 33, 33, 0.8);
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+#control {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#control > div {
+  width: 50%;
+  align-self: center;
+  margin: 0.5rem 0 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#control > div > button:last-child {
+  background-color: rgba(43, 72, 159, 0.65);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+#control > div > button:last-child:hover {
+  background-color: rgba(43, 72, 159, 0.9);
+}
+
+#control > a {
+  color: rgba(52, 52, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 600;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+#control > a:hover {
+  color: rgb(26, 26, 255);
+}
+
+@media only screen and (max-width: 1400px) {
+  #form {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #form {
+    width: 65%;
+  }
+
+  #display {
+    width: 70%;
+  }
+
+  #control > div {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #form {
+    width: 75%;
+  }
+
+  #display {
+    width: 80%;
+  }
+
+  #control > div {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #form {
+    width: 90%;
+  }
+
+  #display {
+    width: 85%;
+  }
+
+  #control > div {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #form {
+    width: 100%;
+  }
+
+  #display {
+    width: 90%;
+  }
+
+  #control > div {
+    width: 90%;
+  }
+}

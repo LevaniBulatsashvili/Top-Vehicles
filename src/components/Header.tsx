@@ -1,10 +1,22 @@
+import { useNavigate } from "react-router-dom";
+import { useStoreDispatch, useStoreSelector } from "../store/hooks";
+import { setUser } from "../store/userSlice";
 import "./Header.module.css";
 import Button from "./UI/Button";
 import SearchBar from "./UI/SearchBar";
 
 export default function Header() {
+  const dispatch = useStoreDispatch();
+  const navigate = useNavigate();
+  const user = useStoreSelector((state) => state.user.user);
+
   function handleChangeLanguage() {
     // TODO
+  }
+
+  function handleAuth() {
+    if (user) dispatch(setUser(undefined));
+    else navigate("/auth?type=login");
   }
 
   return (
@@ -22,8 +34,8 @@ export default function Header() {
             </Button>
           </li>
           <li>
-            <Button to="/auth">
-              <span>Log In</span>
+            <Button onClick={handleAuth}>
+              <span>{user ? "Logout" : "Sign In"}</span>
             </Button>
           </li>
         </ul>
