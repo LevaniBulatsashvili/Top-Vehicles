@@ -1,3 +1,4 @@
+import HttpVehicleData from "../types/HTTP/HttpVehicleData";
 import type Vehicle from "../types/Vehicle";
 
 export async function fetchVehicles() {
@@ -30,4 +31,43 @@ export async function searchVehicles(title: string) {
   if (!response.ok) throw new Error("Failed to fetch vehicles");
 
   return resData;
+}
+
+export async function postVehicle(vehicle: HttpVehicleData) {
+  const response = await fetch("http://localhost:5000/vehicles", {
+    headers: { "Content-Type": "application/json" },
+    method: "POST",
+    body: JSON.stringify(vehicle),
+  });
+
+  const resData: Vehicle = await response.json();
+
+  if (!response.ok) throw new Error("Failed to post vehicle");
+
+  return resData;
+}
+
+export async function updateVehicle(vehicle: HttpVehicleData, id: number) {
+  const response = await fetch(`http://localhost:5000/vehicles/${id}`, {
+    headers: { "Content-Type": "application/json" },
+    method: "PUT",
+    body: JSON.stringify(vehicle),
+  });
+
+  const resData: Vehicle = await response.json();
+
+  if (!response.ok) throw new Error("Failed to update vehicle");
+
+  return resData;
+}
+
+export async function deleteVehicle(id: number) {
+  const response = await fetch(`http://localhost:5000/vehicles/${id}`, {
+    headers: { "Content-Type": "application/json" },
+    method: "DELETE",
+  });
+
+  if (!response.ok) throw new Error("Failed to delete vehicle");
+
+  return id;
 }
