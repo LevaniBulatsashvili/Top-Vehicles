@@ -4,6 +4,7 @@ import { setUser } from "../store/userSlice";
 import "./Header.module.css";
 import Button from "./UI/Button";
 import SearchBar from "./UI/SearchBar";
+import Profile from "./Profile";
 
 export default function Header() {
   const dispatch = useStoreDispatch();
@@ -34,9 +35,13 @@ export default function Header() {
             </Button>
           </li>
           <li>
-            <Button onClick={handleAuth}>
-              <span>{user ? "Logout" : "Sign In"}</span>
-            </Button>
+            {user ? (
+              <Profile handleLogout={handleAuth} />
+            ) : (
+              <Button onClick={handleAuth}>
+                <span>Sign In</span>
+              </Button>
+            )}
           </li>
         </ul>
       </nav>
