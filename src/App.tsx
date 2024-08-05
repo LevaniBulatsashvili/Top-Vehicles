@@ -3,6 +3,8 @@ import Root from "./pages/Root";
 import HomePage from "./pages/Home";
 import AuthPage from "./pages/Auth";
 import VehichlePage from "./pages/Vehicle";
+import UserPage from "./pages/User";
+import UserVehiclePage from "./pages/UserVehicle";
 
 const Router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const Router = createBrowserRouter([
       },
       { path: "auth", element: <AuthPage /> },
       { path: "vehicle/:id", element: <VehichlePage /> },
+      { path: "user", element: <UserPage /> },
+      { path: "user/vehicle", element: <UserVehiclePage /> },
     ],
   },
 ]);

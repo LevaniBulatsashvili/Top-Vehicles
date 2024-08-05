@@ -18,7 +18,28 @@ export const vehicleSlice = createSlice({
     setVehicle(state, action: PayloadAction<Vehicle>) {
       state.vehicle = action.payload;
     },
+    addVehicle(state, action: PayloadAction<Vehicle>) {
+      state.vehicles.unshift(action.payload);
+    },
+    updateVehicle(state, action: PayloadAction<Vehicle>) {
+      const i = state.vehicles.findIndex(
+        (vehicle) => vehicle.id === action.payload.id
+      );
+      state.vehicles[i] = action.payload;
+    },
+    deleteVehicle(state, action: PayloadAction<number>) {
+      const i = state.vehicles.findIndex(
+        (vehicle) => vehicle.id === action.payload
+      );
+      state.vehicles.splice(i, 1);
+    },
   },
 });
 
-export const { setVehicles, setVehicle } = vehicleSlice.actions;
+export const {
+  setVehicles,
+  setVehicle,
+  addVehicle,
+  updateVehicle,
+  deleteVehicle,
+} = vehicleSlice.actions;
