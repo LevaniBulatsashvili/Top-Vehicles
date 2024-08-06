@@ -1,5 +1,10 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./pages/Root";
+import {
+  Navigate,
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import Root, { ProtectedRoutes } from "./pages/Root";
 import HomePage from "./pages/Home";
 import AuthPage from "./pages/Auth";
 import VehichlePage from "./pages/Vehicle";
@@ -11,14 +16,16 @@ const Router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
+      { index: true, element: <HomePage /> },
       { path: "auth", element: <AuthPage /> },
       { path: "vehicle/:id", element: <VehichlePage /> },
-      { path: "user", element: <UserPage /> },
-      { path: "user/vehicle", element: <UserVehiclePage /> },
+      {
+        element: <ProtectedRoutes />,
+        children: [
+          { path: "user", element: <UserPage /> },
+          { path: "user/vehicle", element: <UserVehiclePage /> },
+        ],
+      },
     ],
   },
 ]);
