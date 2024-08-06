@@ -1,0 +1,14 @@
+.btn {
+  font-family: "Bitter", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+  background: none;
+  border: none;
+}
+
+.btn:hover {
+  color: #fff;
+}

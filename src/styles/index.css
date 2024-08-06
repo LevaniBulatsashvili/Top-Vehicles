@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Bitter:ital,wght@0,100..900;1,100..900&family=Galada&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fae6db;
+}
