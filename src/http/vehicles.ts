@@ -1,4 +1,4 @@
-import HttpVehicleData from "../types/HTTP/HttpVehicleData";
+import type HttpVehicleData from "../types/HTTP/HttpVehicleData";
 import type Vehicle from "../types/Vehicle";
 
 export async function fetchVehicles() {
@@ -47,8 +47,11 @@ export async function postVehicle(vehicle: HttpVehicleData) {
   return resData;
 }
 
-export async function updateVehicle(vehicle: HttpVehicleData, id: number) {
-  const response = await fetch(`http://localhost:5000/vehicles/${id}`, {
+export async function updateVehicle(
+  vehicle: HttpVehicleData,
+  vehicleId: number
+) {
+  const response = await fetch(`http://localhost:5000/vehicles/${vehicleId}`, {
     headers: { "Content-Type": "application/json" },
     method: "PUT",
     body: JSON.stringify(vehicle),
