@@ -1,14 +1,11 @@
-type Vehicle = {
-  id: number;
+type ValidateVehicle = {
   user_id: number;
   title: string;
   description: string;
   loc: string;
   price: number;
   img: string;
-  // type: [];
-  liked: boolean;
-  views: number;
+  // type: string[];
 };
 
-export default Vehicle;
+export default ValidateVehicle;
