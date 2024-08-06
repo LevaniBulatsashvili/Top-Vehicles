@@ -1,4 +1,4 @@
-import styles from "./Auth.module.css";
+import styles from "../styles/pages/Auth.module.scss";
 import { Form, useNavigate, useSearchParams } from "react-router-dom";
 import Container from "../components/UI/Container";
 import { FormEvent, useRef, useState } from "react";
@@ -64,7 +64,7 @@ export default function AuthPage() {
             />
           )}
           {errors.length > 0 && (
-            <div>
+            <div className={styles["errors"]}>
               {errors.map((error) => (
                 <p key={error}>{error}</p>
               ))}

@@ -1,4 +1,4 @@
-import styles from "./UserVehicle.module.css";
+import styles from "../styles/pages/UserVehicle.module.scss";
 import { Form, useLocation, useNavigate } from "react-router-dom";
 import Container from "../components/UI/Container";
 import { FormEvent, useRef, useState } from "react";

@@ -1,4 +1,4 @@
-import styles from "./SearchBar.module.css";
+import styles from "../../styles/UI/SearchBar.module.scss";
 import SearchIcon from "../../assets/search-icon.svg";
 import { useRef } from "react";
 import { searchVehicles } from "../../http/vehicles";

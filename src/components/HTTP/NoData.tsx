@@ -1,4 +1,4 @@
-import styles from "./NoData.module.css";
+import styles from "../../styles/HTTP/NoData.module.scss";
 
 export default function NoData() {
   return (

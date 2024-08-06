@@ -1,7 +1,7 @@
+import styles from "../styles/SHARED/Header.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useStoreDispatch, useStoreSelector } from "../store/hooks";
 import { setUser } from "../store/userSlice";
-import "./Header.module.css";
 import Button from "./UI/Button";
 import SearchBar from "./UI/SearchBar";
 import Profile from "./Profile";
@@ -21,7 +21,7 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header id={styles["header"]}>
       <Button to="/">
         <h1>TopVehicle</h1>
       </Button>

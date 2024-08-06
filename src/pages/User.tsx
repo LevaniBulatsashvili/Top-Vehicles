@@ -1,5 +1,5 @@
+import styles from "../styles/pages/User.module.scss";
 import Container from "../components/UI/Container";
-import styles from "./User.module.css";
 import img from "../assets/placeholder.png";
 import Button from "../components/UI/Button";
 import { useStoreDispatch, useStoreSelector } from "../store/hooks";
@@ -7,8 +7,10 @@ import { deleteVehicle as httpDeleteVehicle } from "../http/vehicles";
 import { deleteVehicle } from "../store/vehicleSlice";
 
 export default function UserPage() {
-  const userId = useStoreSelector(state => state.user.user!.id)
-  const userCars = useStoreSelector(state => state.vehicle.vehicles).filter(vehicle => vehicle.user_id === userId);
+  const userId = useStoreSelector((state) => state.user.user!.id);
+  const userCars = useStoreSelector((state) => state.vehicle.vehicles).filter(
+    (vehicle) => vehicle.user_id === userId
+  );
   const dispatch = useStoreDispatch();
   // TODO UPDATE DELETE
   function handleDelete(id: number) {

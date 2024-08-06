@@ -16,72 +16,68 @@
   gap: 1rem;
   flex-direction: column;
   align-items: center;
-}
 
-#display > h1 {
-  font-size: 2rem;
-  color: #000936d9;
-  font-family: Bitter;
-  margin: 2rem 0 1rem 0;
-  font-weight: 800;
-}
+  h1 {
+    font-size: 2rem;
+    color: #000936d9;
+    font-family: Bitter;
+    margin: 2rem 0 1rem 0;
+    font-weight: 800;
+  }
 
-#display > input {
-  width: 100%;
-  font-size: 1rem;
-  font-family: Bitter;
-  font-weight: 600;
-  padding: 0.5rem;
-}
+  input {
+    width: 100%;
+    font-size: 1rem;
+    font-family: Bitter;
+    font-weight: 600;
+    padding: 0.5rem;
+    &:hover {
+      border: 2px solid #2249bd;
+      border-radius: 3px;
+    }
+  }
 
-#display > input:hover {
-  border: 2px solid #2249bd;
-  border-radius: 3px;
-}
-
-#display > div > p {
-  font-family: Bitter;
-  font-weight: 600;
-  color: #ff2121cc;
-  margin-bottom: 0.3rem;
-  text-align: center;
+  .errors > p {
+    font-family: Bitter;
+    font-weight: 600;
+    color: #ff2121cc;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
 }
 
 #control {
   width: 80%;
   display: flex;
   flex-direction: column;
-}
 
-#control > div {
-  width: 50%;
-  align-self: center;
-  margin: 0.5rem 0 1.5rem 0;
-  display: flex;
-  justify-content: space-between;
-}
+  & > div {
+    width: 50%;
+    align-self: center;
+    margin: 0.5rem 0 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    & > button:last-child {
+      background-color: #2b489fa6;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 4px;
+      &:hover {
+        background-color: #2b489fe6;
+      }
+    }
+  }
 
-#control > div > button:last-child {
-  background-color: #2b489fa6;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
-
-#control > div > button:last-child:hover {
-  background-color: #2b489fe6;
-}
-
-#control > a {
-  color: #3434ffd9;
-  font-size: 0.9rem;
-  font-weight: 600;
-  align-self: center;
-  margin-bottom: 1rem;
-}
-
-#control > a:hover {
-  color: #1a1aff;
+  & > a {
+    color: #3434ffd9;
+    font-size: 0.9rem;
+    font-weight: 600;
+    align-self: center;
+    margin-bottom: 1rem;
+    &:hover {
+      color: #1a1aff;
+    }
+  }
 }
 
 @media only screen and (max-width: 1400px) {

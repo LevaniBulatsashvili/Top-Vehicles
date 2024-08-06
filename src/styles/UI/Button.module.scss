@@ -7,8 +7,7 @@
   font-size: 1rem;
   background: none;
   border: none;
-}
-
-.btn:hover {
-  color: #fff;
+  &:hover {
+    color: #fff;
+  }
 }

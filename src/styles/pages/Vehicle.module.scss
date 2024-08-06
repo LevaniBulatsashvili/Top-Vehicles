@@ -1,0 +1,36 @@
+#vehicle {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  & > img {
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 1rem 1rem 0;
+    float: left;
+  }
+
+  & > p {
+    font-size: 1.5rem;
+  }
+}
+
+#vehicle-details {
+  font-family: Bitter, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  & > p {
+    color: #4f4e4e;
+    font-weight: 600;
+    &:last-child {
+      margin-left: auto;
+      background-color: #fcffd7;
+      color: #005f19;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+  }
+}

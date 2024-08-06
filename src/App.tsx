@@ -1,7 +1,4 @@
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root, { ProtectedRoutes } from "./pages/Root";
 import HomePage from "./pages/Home";
 import AuthPage from "./pages/Auth";

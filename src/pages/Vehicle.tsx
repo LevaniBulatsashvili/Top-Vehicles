@@ -1,4 +1,4 @@
-import styles from "./Vehicle.module.css";
+import styles from "../styles/pages/Vehicle.module.scss";
 import { useParams } from "react-router-dom";
 import vehicleImg from "../assets/placeholder.png";
 import Container from "../components/UI/Container";

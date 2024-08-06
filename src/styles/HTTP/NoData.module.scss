@@ -1,4 +1,4 @@
-#error {
+#no-data {
   margin-top: 2rem;
   width: 80vw;
   height: 75vh;
@@ -6,11 +6,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: rgba(218, 67, 3, 0.35);
-}
+  background-color: #0c2ca137;
 
-#error > h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  color: rgba(215, 0, 0, 0.805);
+  & h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #0c25a1b3;
+  }
 }

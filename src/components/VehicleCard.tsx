@@ -1,4 +1,4 @@
-import styles from "./VehicleCard.module.css";
+import styles from "../styles/SHARED/VehicleCard.module.scss";
 import VehicleCardProps from "../types/VehicleCardProps";
 import Button from "./UI/Button";
 

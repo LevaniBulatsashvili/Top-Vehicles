@@ -1,5 +1,5 @@
+import styles from "../styles/SHARED/Profile.module.scss";
 import { useState } from "react";
-import styles from "./Profile.module.css";
 import Button from "./UI/Button";
 import type ProfileProps from "../types/ProfileProps";
 

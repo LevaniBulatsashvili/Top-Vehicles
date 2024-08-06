@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import styles from "../../styles/UI/Button.module.scss";
 import { NavLink } from "react-router-dom";
 import {
   type ButtonProps,
