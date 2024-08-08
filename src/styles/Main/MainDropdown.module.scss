@@ -1,0 +1,32 @@
+@mixin base-dropdown-menu {
+  position: absolute;
+  z-index: 1;
+  min-width: 8rem;
+  background-color: #ebb968;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 #0000004d;
+  right: -0.2rem;
+  transition: 0.3s;
+}
+
+#main-dropdown {
+  position: relative;
+  margin: 0.2rem 0.5rem 0 1rem;
+
+  img {
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    @include base-dropdown-menu;
+    top: 1.2rem;
+    transform: translateY(1rem);
+  }
+
+  .dropdown-menu-exitting {
+    @include base-dropdown-menu;
+    top: 2.2rem;
+    opacity: 0;
+  }
+}

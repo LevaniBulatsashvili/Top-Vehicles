@@ -1,5 +1,5 @@
 import styles from "../../styles/HTTP/HttpError.module.scss";
-import type Children from "../../types/Children";
+import type Children from "../../types/Shared/Children";
 
 export default function HttpError({ children }: Children) {
   return (

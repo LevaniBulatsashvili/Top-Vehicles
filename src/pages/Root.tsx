@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
 import { store } from "../store/store";
-import Header from "../components/Header";
+import Header from "../components/Main/Header";
 import { useStoreSelector } from "../store/hooks";
 
 export function ProtectedRoutes() {

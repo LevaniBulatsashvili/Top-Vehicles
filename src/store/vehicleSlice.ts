@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type VehicleState from "../types/store/VehicleState";
-import type Vehicle from "../types/Vehicle";
+import type VehicleState from "../types/Store/VehicleState";
+import type Vehicle from "../types/Shared/Vehicle";
 import { vehicle } from "./InitialState";
 
 const initialState: VehicleState = {

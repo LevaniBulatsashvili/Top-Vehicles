@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useStoreDispatch } from "../store/hooks";
 import { setVehicle, setVehicles } from "../store/vehicleSlice";
-import type Vehicle from "../types/Vehicle";
+import type Vehicle from "../types/Shared/Vehicle";
 
 export function useFetch<T>(fetchFn: () => Promise<T>, action: string) {
   const dispatch = useStoreDispatch();

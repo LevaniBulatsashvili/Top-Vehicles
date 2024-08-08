@@ -1,4 +1,4 @@
-import type User from "../types/User";
+import type User from "../types/Shared/User";
 
 export async function register(
   email: string,

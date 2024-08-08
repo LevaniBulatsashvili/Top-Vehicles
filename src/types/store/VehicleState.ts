@@ -1,4 +1,4 @@
-import type Vehicle from "../Vehicle";
+import type Vehicle from "../Shared/Vehicle";
 
 type VehicleState = {
   vehicles: Vehicle[];

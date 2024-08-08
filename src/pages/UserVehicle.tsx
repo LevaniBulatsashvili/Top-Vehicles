@@ -4,7 +4,7 @@ import Container from "../components/UI/Container";
 import { FormEvent, useRef, useState } from "react";
 import Button from "../components/UI/Button";
 import { useStoreDispatch, useStoreSelector } from "../store/hooks";
-import type Vehicle from "../types/Vehicle";
+import type Vehicle from "../types/Shared/Vehicle";
 import {
   postVehicle as httpPostVehicle,
   updateVehicle as httpUpdateVehicle,

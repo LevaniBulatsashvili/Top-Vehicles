@@ -1,5 +1,5 @@
 import type HttpVehicleData from "../types/HTTP/HttpVehicleData";
-import type Vehicle from "../types/Vehicle";
+import type Vehicle from "../types/Shared/Vehicle";
 
 export async function fetchVehicles() {
   const response = await fetch("http://localhost:5000/vehicles");

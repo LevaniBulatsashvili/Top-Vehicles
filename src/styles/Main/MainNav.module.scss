@@ -1,0 +1,11 @@
+#main-nav {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 720px) {
+  #main-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

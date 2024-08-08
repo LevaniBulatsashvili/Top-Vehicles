@@ -1,0 +1,57 @@
+import styles from "../../styles/Main/Profile.module.scss";
+import { useRef, useState } from "react";
+import Button from "../UI/Button";
+import { useStoreDispatch } from "../../store/hooks";
+import { setUser } from "../../store/userSlice";
+import { useNavigate } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+
+export default function Profile() {
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const dispatch = useStoreDispatch();
+  const [showProfile, setShowProfile] = useState(false);
+
+  function toggleShowProfile() {
+    setShowProfile((prev) => !prev);
+  }
+
+  function toProfilePage() {
+    navigate("/user");
+    toggleShowProfile();
+  }
+
+  return (
+    <div id={styles["profile"]}>
+      <svg
+        onClick={toggleShowProfile}
+        xmlns="http://www.w3.org/2000/svg"
+        height="36px"
+        viewBox="0 -960 960 960"
+        width="36px"
+        fill="#151515"
+      >
+        <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+      </svg>
+
+      <CSSTransition
+        in={showProfile}
+        classNames={{
+          enter: styles["profile-content"],
+          enterDone: styles["profile-content"],
+          exit: styles["profile-content-exitting"],
+        }}
+        unmountOnExit
+        timeout={300}
+        nodeRef={nodeRef}
+      >
+        <div ref={nodeRef}>
+          <div id={styles["arrow-top"]} onClick={toggleShowProfile}></div>
+          <Button onClick={toProfilePage}>Profile</Button>
+          <Button>Lang</Button>
+          <Button onClick={() => dispatch(setUser(undefined))}>Logout</Button>
+        </div>
+      </CSSTransition>
+    </div>
+  );
+}

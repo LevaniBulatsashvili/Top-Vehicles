@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type UserState from "../types/store/UserState";
-import type User from "../types/User";
+import type UserState from "../types/Store/UserState";
+import type User from "../types/Shared/User";
 
 const initialState: UserState = {
   user: undefined,

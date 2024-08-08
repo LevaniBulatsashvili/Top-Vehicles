@@ -1,4 +1,4 @@
-import Children from "../Children";
+import Children from "../Shared/Children";
 
 type HttpContainerProps = {
   isFetching: boolean;

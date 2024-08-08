@@ -1,0 +1,30 @@
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  background-color: #ff8000;
+  border: 1px solid #ac2000c6;
+
+  h1 {
+    font-family: Galada, sans-serif;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ff2d03;
+    margin: 0 1rem;
+    &:hover {
+      color: #ff2d03cc;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #main-header h1 {
+     font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  #main-header h1 {
+    font-size: 1.4rem;
+ }
+}
