@@ -5,8 +5,10 @@ import Button from "../components/UI/Button";
 import { useStoreDispatch, useStoreSelector } from "../store/hooks";
 import { deleteVehicle as httpDeleteVehicle } from "../http/vehicles";
 import { deleteVehicle } from "../store/vehicleSlice";
+import { useTranslation } from "react-i18next";
 
 export default function UserPage() {
+  const { t } = useTranslation();
   const userId = useStoreSelector((state) => state.user.user!.id);
   const userCars = useStoreSelector((state) => state.vehicle.vehicles).filter(
     (vehicle) => vehicle.user_id === userId
@@ -23,8 +25,8 @@ export default function UserPage() {
     <Container>
       <div id={styles["user"]}>
         <div id={styles["user-header"]}>
-          <h2>My Vehicles</h2>
-          <Button to="/user/vehicle">Post Vehicle</Button>
+          <h2>{t("My Vehicles")}</h2>
+          <Button to="/user/vehicle">{t("Post Vehicle")}</Button>
         </div>
         <ul id={styles["user-vehicles"]}>
           {userCars.map((vehicle) => (
@@ -38,10 +40,10 @@ export default function UserPage() {
 
                 <div className={styles["vehicle-control"]}>
                   <Button onClick={() => handleDelete(vehicle.id)}>
-                    Delete
+                    {t("Delete")}
                   </Button>
                   <Button to="/user/vehicle?type=edit" state={vehicle}>
-                    Edit
+                    {t("Edit")}
                   </Button>
                 </div>
               </div>

@@ -5,8 +5,10 @@ import { searchVehicles } from "../../http/vehicles";
 import { useStoreDispatch } from "../../store/hooks";
 import { setVehicles } from "../../store/vehicleSlice";
 import type ScreenWidth from "../../types/Shared/ScreenWidth";
+import { useTranslation } from "react-i18next";
 
 export default function SearchBar({ width }: ScreenWidth) {
+  const { t } = useTranslation();
   const dispatch = useStoreDispatch();
   const searchBar = useRef<HTMLInputElement>(null!);
 
@@ -34,13 +36,13 @@ export default function SearchBar({ width }: ScreenWidth) {
     <div id={styles["search-bar"]}>
       <input
         onKeyUp={(e) => e.key === "Enter" && onSearch()}
-        placeholder="Search"
+        placeholder={t("Search")}
         ref={searchBar}
       ></input>
 
       <button onClick={onSearch}>
         <img src={SearchIcon} width={21} alt="search button" />
-        <p hidden={width > 720 || width < 520}>Search</p>
+        <p hidden={width > 720 || width < 520}>{t("Search")}</p>
       </button>
     </div>
   );

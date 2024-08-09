@@ -11,8 +11,10 @@ import {
 } from "../http/vehicles";
 import { addVehicle, updateVehicle } from "../store/vehicleSlice";
 import validateVehicle from "../validations/validateVehicle";
+import { useTranslation } from "react-i18next";
 
 export default function UserVehiclePage() {
+  const { t } = useTranslation();
   const user_id = useStoreSelector((state) => state.user.user!.id);
   const selectedVehicle: Vehicle | null = useLocation().state;
   const navigate = useNavigate();
@@ -60,36 +62,36 @@ export default function UserVehiclePage() {
     <Container>
       <Form id={styles["form"]} onSubmit={handleSubmit}>
         <div id={styles["display"]}>
-          <h1>{selectedVehicle ? "Edit" : "Post"}</h1>
+          <h1>{selectedVehicle ? t("Edit") : t("Post")}</h1>
           <input
-            placeholder="Title"
+            placeholder={t("Title")}
             defaultValue={selectedVehicle?.title}
             ref={titleRef}
           />
           <input
-            placeholder="Description"
+            placeholder={t("Description")}
             defaultValue={selectedVehicle?.description}
             ref={descriptionRef}
           />
           <input
-            placeholder="Location"
+            placeholder={t("Location")}
             defaultValue={selectedVehicle?.loc}
             ref={locRef}
           />
           <input
-            placeholder="Price"
+            placeholder={t("Price")}
             defaultValue={selectedVehicle?.price}
             type="number"
             ref={priceRef}
           />
           <input hidden type="file" accept="image/*" ref={imageRef} />
           <Button type="button" onClick={() => imageRef.current!.click()}>
-            Upload File
+            {t("Upload File")}
           </Button>
           {errors.length > 0 && (
             <div>
               {errors.map((error) => (
-                <p key={error}>{error}</p>
+                <p key={error}>{t(error)}</p>
               ))}
             </div>
           )}
@@ -98,10 +100,11 @@ export default function UserVehiclePage() {
         <div id={styles["control"]}>
           <div>
             <Button to="/user" type="button">
-              Cancel
+              {t("Cancel")}
             </Button>
+
             <Button type="submit" disabled={isFetching}>
-              {selectedVehicle ? "Edit" : "Post"}
+              {selectedVehicle ? t("Edit") : t("Post")}
             </Button>
           </div>
         </div>

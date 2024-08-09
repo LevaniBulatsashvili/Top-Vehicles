@@ -7,8 +7,10 @@ import { login, register } from "../http/users";
 import { useStoreDispatch } from "../store/hooks";
 import { setUser } from "../store/userSlice";
 import validateUser from "../validations/validateUser";
+import { useTranslation } from "react-i18next";
 
 export default function AuthPage() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type");
   const navigate = useNavigate();
@@ -43,30 +45,35 @@ export default function AuthPage() {
     navigate("/");
   }
 
+  function switchAuthType() {
+    setErrors([]);
+    navigate(`/auth?type=${type === "register" ? t("login") : t("register")}`);
+  }
+
   return (
     <Container>
       <Form id={styles["form"]} onSubmit={handleSubmit}>
         <div id={styles["display"]}>
-          <h1>{type === "login" ? "Login" : "Register"}</h1>
-          <input name="email" placeholder="Email" ref={emailRef} />
+          <h1>{type === "login" ? t("Login") : t("Register")}</h1>
+          <input name="email" placeholder={t("Email")} ref={emailRef} />
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder={t("Password")}
             ref={passwordRef}
           />
           {type === "register" && (
             <input
               type="password"
               name="confirm"
-              placeholder="Confirm"
+              placeholder={t("Confirm")}
               ref={confirmRef}
             />
           )}
           {errors.length > 0 && (
             <div className={styles["errors"]}>
               {errors.map((error) => (
-                <p key={error}>{error}</p>
+                <p key={error}>{t(error)}</p>
               ))}
             </div>
           )}
@@ -75,18 +82,16 @@ export default function AuthPage() {
         <div id={styles["control"]}>
           <div>
             <Button to="/" type="button">
-              Cancel
+              {t("Cancel")}
             </Button>
             <Button type="submit" disabled={isFetching}>
-              {type === "register" ? "Register" : "Login"}
+              {type === "register" ? t("Register") : t("Login")}
             </Button>
           </div>
-          <Button
-            to={`/auth?type=${type === "register" ? "login" : "register"}`}
-          >
+          <Button type="button" onClick={switchAuthType}>
             {type === "login"
-              ? "Create account, Register"
-              : "Have an account? Login"}
+              ? t("Create account, Register")
+              : t("Have an account? Login")}
           </Button>
         </div>
       </Form>

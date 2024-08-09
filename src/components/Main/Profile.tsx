@@ -5,12 +5,17 @@ import { useStoreDispatch } from "../../store/hooks";
 import { setUser } from "../../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import { useTranslation } from "react-i18next";
+import useOnOutsideClicked from "../../hooks/useOnOutsideClicked";
 
 export default function Profile() {
+  const { t } = useTranslation();
   const nodeRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const dispatch = useStoreDispatch();
+  const profileRef = useRef<HTMLDivElement>(null);
   const [showProfile, setShowProfile] = useState(false);
+  useOnOutsideClicked(profileRef, () => setShowProfile(false));
 
   function toggleShowProfile() {
     setShowProfile((prev) => !prev);
@@ -22,7 +27,7 @@ export default function Profile() {
   }
 
   return (
-    <div id={styles["profile"]}>
+    <div id={styles["profile"]} ref={profileRef}>
       <svg
         onClick={toggleShowProfile}
         xmlns="http://www.w3.org/2000/svg"
@@ -47,9 +52,10 @@ export default function Profile() {
       >
         <div ref={nodeRef}>
           <div id={styles["arrow-top"]} onClick={toggleShowProfile}></div>
-          <Button onClick={toProfilePage}>Profile</Button>
-          <Button>Lang</Button>
-          <Button onClick={() => dispatch(setUser(undefined))}>Logout</Button>
+          <Button onClick={toProfilePage}>{t("Profile")}</Button>
+          <Button onClick={() => dispatch(setUser(undefined))}>
+            {t("Logout")}
+          </Button>
         </div>
       </CSSTransition>
     </div>

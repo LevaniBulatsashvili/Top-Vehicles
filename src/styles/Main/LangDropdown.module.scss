@@ -1,0 +1,89 @@
+@mixin base-lang-control {
+  z-index: 5;
+  min-width: 6rem;
+  position: absolute;
+  border-radius: 0.3rem;
+  border: 1px solid #70707095;
+  background-color: #ebb968;
+  flex-direction: column;
+  align-items: center;
+  right: -1.9rem;
+
+  & > button {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid black;
+    font-weight: 600;
+    color: #db0707;
+    &:hover {
+      background-color: #fea516;
+    }
+  }
+}
+
+.lang-dropdown {
+  z-index: 10;
+  position: relative;
+
+  & > button {
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ff2d00e6;
+    &:hover {
+      color: #ff0000;
+    }
+  }
+
+  .lang-control {
+    @include base-lang-control;
+    transform: translateY(0.5rem);
+    transition: 0.3s;
+  }
+
+  .lang-control-exitting {
+    @include base-lang-control;
+    transform: translateY(0);
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .lang-dropdown {
+    & > button {
+      font-size: 1.2rem;
+    }
+
+    .lang-control > button {
+      font-size: 0.9rem;
+    }
+
+    .lang-control-exitting > button {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .lang-dropdown > button {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .lang-dropdown {
+    & > button {
+      width: 100%;
+      height: 100%;
+    }
+
+    .lang-control > button {
+      font-size: 0.8rem;
+    }
+
+    .lang-control-exitting > button {
+      font-size: 0.8rem;
+    }
+  }
+}

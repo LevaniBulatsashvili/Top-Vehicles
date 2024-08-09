@@ -17,7 +17,7 @@ export default function validateUser(
   if (!validatePassword(password))
     errors.push("Password must be at least 6 characters long");
   if (password !== confirm) errors.push("Passwords don't match");
-  if (!validateEmail(email)) errors.push("Email is invalid.");
+  if (!validateEmail(email)) errors.push("Email is invalid");
 
   return errors;
 }

@@ -1,5 +1,6 @@
 #main-nav {
   display: flex;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -7,5 +8,6 @@
   #main-nav {
     width: 100%;
     justify-content: space-between;
+    gap: 1.5rem;
   }
 }

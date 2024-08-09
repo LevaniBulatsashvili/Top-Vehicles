@@ -31,7 +31,7 @@ export default function MainDropdown() {
         timeout={300}
       >
         <div ref={nodeRef}>
-          <MainNavLinks width={719} />
+          <MainNavLinks />
         </div>
       </CSSTransition>
     </div>
