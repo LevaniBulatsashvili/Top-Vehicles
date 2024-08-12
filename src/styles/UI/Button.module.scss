@@ -11,3 +11,23 @@
     color: #fff;
   }
 }
+
+@media only screen and (max-width: 920px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .btn {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
+  }
+}

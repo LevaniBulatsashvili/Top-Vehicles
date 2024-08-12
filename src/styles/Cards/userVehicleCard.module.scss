@@ -1,0 +1,138 @@
+.user-vehicle {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0.5rem 3rem;
+  border: 1px solid black;
+  background-color: #4878eba8;
+
+  & > img {
+    width: 13rem;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .vehicle-control {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    & button:first-child {
+      font-weight: 600;
+      color: #ff0000bd;
+      &:hover {
+        color: #ff0202;
+      }
+    }
+
+    & > a:last-child {
+      color: #ffffffdb;
+      border-radius: 5px;
+      padding: 0.5rem 1.4rem;
+      background-color: #0000ffc6;
+      &:hover {
+        color: #fff;
+        background-color: #0000ffda;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .user-vehicle {
+    gap: 0.8rem;
+    padding: 0.8rem;
+    margin: 0.5rem 2.2rem;
+
+    & > img {
+      width: 12rem;
+    }
+
+    .vehicle-control {
+      gap: 0.8rem;
+
+      & > a:last-child {
+        padding: 0.4rem 1.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .user-vehicle {
+    gap: 0.7rem;
+    padding: 0.7rem;
+    margin: 0.4rem 1.5rem;
+
+    & > img {
+      width: 11.5rem;
+    }
+
+    .vehicle-control {
+      gap: 0.7rem;
+
+      & > a:last-child {
+        padding: 0.4rem 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .user-vehicle {
+    position: relative;
+    display: block;
+    padding: 0.5rem;
+    margin: 0.3rem 1rem;
+
+    & > img {
+      float: left;
+      margin: 0 0.5rem 0.5rem 0;
+      width: 9rem;
+      height: 7rem;
+    }
+
+    & > div {
+      display: block;
+      h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .vehicle-control {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+
+      & > a:last-child {
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .user-vehicle {
+    & > img {
+      width: 6rem;
+      height: 4.5rem;
+    }
+
+    .vehicle-control {
+      & > a:last-child {
+        padding: 0.2rem 0.4rem;
+      }
+    }
+  }
+}

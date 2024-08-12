@@ -1,5 +1,5 @@
 import styles from "../styles/pages/Home.module.scss";
-import VehicleCard from "../components/VehicleCard";
+import VehicleCard from "../components/Cards/VehicleCard";
 import vehicleImg from "../assets/placeholder.png";
 import Container from "../components/UI/Container";
 import { useFetch } from "../hooks/useFetch";

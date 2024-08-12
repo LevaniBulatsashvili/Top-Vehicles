@@ -1,86 +1,82 @@
 #user {
-  width: 80%;
+  width: 90%;
+  height: 85vh;
   border: 1px solid black;
   background-color: #d5d3d3;
-}
 
-#user-header {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid black;
-  margin-bottom: 0.5rem;
-
-  & > h2 {
-    font-family: Galada;
-    color: #0000ffc6;
-    font-weight: 400;
-  }
-
-  & > a {
-    font-size: 1.2rem;
-    border-radius: 5px;
-    color: #ffffffdb;
-    background-color: #0000ffc6;
-  }
-
-  & > button:hover {
-    color: #ffffff;
-    background-color: #0000ffda;
-  }
-}
-
-#user-vehicles {
-  display: flex;
-  flex-direction: column;
-  gap: 0rem;
-  &:last-child {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.user-vehicle {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  margin: 0.5rem 3rem;
-  border: 1px solid black;
-  background-color: #4878eba8;
-
-  & > img {
-    width: 200px;
-  }
-
-  & > div {
+  #user-header {
+    background-color: #fff;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-  }
-}
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 0.5rem;
 
-.vehicle-control {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+    & > h2 {
+      font-family: Galada;
+      color: #0000ffc6;
+      font-weight: 400;
+    }
 
-  & button:first-child {
-    font-weight: 600;
-    color: #ff0000bd;
-    &:hover {
-      color: #ff0202;
+    & > a {
+      font-size: 1.2rem;
+      border-radius: 5px;
+      color: #ffffffdb;
+      background-color: #0000ffc6;
+    }
+
+    & > a:hover {
+      color: #ffffff;
+      background-color: #0000ffda;
     }
   }
+}
 
-  & > a:last-child {
-    color: #ffffffdb;
-    border-radius: 5px;
-    padding: 0.5rem 1.4rem;
-    background-color: #0000ffc6;
-    &:hover {
-      color: #fff;
-      background-color: #0000ffda;
+@media only screen and (max-width: 1200px) {
+  #user {
+    width: 95%;
+
+    #user-header {
+      padding: 0.4rem 0.8rem;
+
+      & > h2 {
+        font-size: 1.3rem;
+      }
+
+      & > a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  #user {
+    width: 100%;
+
+    #user-header {
+      & > h2 {
+        font-size: 1.2rem;
+      }
+
+      & > a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #user > #user-header {
+    padding: 0.3rem 0.6rem;
+
+    & > h2 {
+      font-size: 1.1rem;
+    }
+
+    & > a {
+      font-size: 0.9rem;
     }
   }
 }

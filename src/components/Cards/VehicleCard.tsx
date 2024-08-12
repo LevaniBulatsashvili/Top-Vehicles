@@ -1,6 +1,6 @@
-import styles from "../styles/Shared/VehicleCard.module.scss";
-import VehicleCardProps from "../types/Props/VehicleCardProps";
-import Button from "./UI/Button";
+import styles from "../../styles/Shared/VehicleCard.module.scss";
+import type VehicleCardProps from "../../types/Props/VehicleCardProps";
+import Button from "../UI/Button";
 
 export default function VehicleCard({
   id,

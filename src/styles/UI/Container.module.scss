@@ -5,3 +5,15 @@
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 920px) {
+  #container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #container {
+    width: 100%;
+  }
+}
