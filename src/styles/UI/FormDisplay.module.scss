@@ -1,0 +1,59 @@
+#form-display {
+  width: 60%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+
+  & > h1 {
+    font-size: 2rem;
+    color: #000936d9;
+    font-family: Bitter;
+    margin: 2rem 0 1rem 0;
+    font-weight: 800;
+  }
+
+  & > input {
+    width: 100%;
+    font-size: 1rem;
+    font-family: Bitter;
+    font-weight: 600;
+    padding: 0.5rem;
+    &:hover {
+      border: 2px solid #2249bd;
+      border-radius: 3px;
+    }
+  }
+
+  .errors > p {
+    font-family: Bitter;
+    font-weight: 600;
+    color: #ff2121cc;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #form-display {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #form-display {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #form-display {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #form-display {
+    width: 90%;
+  }
+}

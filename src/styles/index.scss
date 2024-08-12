@@ -19,3 +19,45 @@ body {
   min-height: 100vh;
   background-color: #fae6db;
 }
+
+form {
+  width: 40%;
+  min-height: 45vh;
+  background-color: #2244778c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-top: 5rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  form {
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  form {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  form {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  form {
+    width: 100%;
+  }
+}

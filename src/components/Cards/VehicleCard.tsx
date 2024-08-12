@@ -1,5 +1,5 @@
 import styles from "../../styles/Cards/VehicleCard.module.scss";
-import type VehicleCardProps from "../../types/Props/VehicleCardProps";
+import type VehicleCardProps from "../../types/Cards/VehicleCardProps";
 import Button from "../UI/Button";
 
 export default function VehicleCard({

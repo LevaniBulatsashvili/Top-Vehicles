@@ -8,6 +8,9 @@ import { useStoreDispatch } from "../store/hooks";
 import { setUser } from "../store/userSlice";
 import validateUser from "../validations/validateUser";
 import { useTranslation } from "react-i18next";
+import ControlActions from "../components/UI/ControlActions";
+import Control from "../components/UI/Control";
+import FormDisplay from "../components/UI/FormDisplay";
 
 export default function AuthPage() {
   const { t } = useTranslation();
@@ -52,9 +55,11 @@ export default function AuthPage() {
 
   return (
     <Container>
-      <Form id={styles["form"]} onSubmit={handleSubmit}>
-        <div id={styles["display"]}>
-          <h1>{type === "login" ? t("Login") : t("Register")}</h1>
+      <Form onSubmit={handleSubmit}>
+        <FormDisplay
+          title={type === "login" ? t("Login") : t("Register")}
+          errors={errors}
+        >
           <input name="email" placeholder={t("Email")} ref={emailRef} />
           <input
             type="password"
@@ -70,30 +75,20 @@ export default function AuthPage() {
               ref={confirmRef}
             />
           )}
-          {errors.length > 0 && (
-            <div className={styles["errors"]}>
-              {errors.map((error) => (
-                <p key={error}>{t(error)}</p>
-              ))}
-            </div>
-          )}
-        </div>
+        </FormDisplay>
+        <Control>
+          <ControlActions
+            onCancel="/"
+            disabled={isFetching}
+            submitText={type === "register" ? t("Register") : t("Login")}
+          />
 
-        <div id={styles["control"]}>
-          <div>
-            <Button to="/" type="button">
-              {t("Cancel")}
-            </Button>
-            <Button type="submit" disabled={isFetching}>
-              {type === "register" ? t("Register") : t("Login")}
-            </Button>
-          </div>
-          <Button type="button" onClick={switchAuthType}>
+          <Button id={styles["guide"]} type="button" onClick={switchAuthType}>
             {type === "login"
               ? t("Create account, Register")
               : t("Have an account? Login")}
           </Button>
-        </div>
+        </Control>
       </Form>
     </Container>
   );

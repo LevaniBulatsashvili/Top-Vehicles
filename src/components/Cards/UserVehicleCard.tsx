@@ -1,17 +1,16 @@
 import styles from "../../styles/Cards/UserVehicleCard.module.scss";
 import img from "../../assets/placeholder.png";
-import type Vehicle from "../../types/Shared/Vehicle";
 import { useStoreDispatch } from "../../store/hooks";
 import { deleteVehicle as httpDeleteVehicle } from "../../http/vehicles";
 import { deleteVehicle } from "../../store/vehicleSlice";
 import { useTranslation } from "react-i18next";
 import Button from "../UI/Button";
+import type UserVehicleCardProps from "../../types/Cards/UserVehicleCardProps";
 
-export default function UserVehicleCard({ vehicle }: { vehicle: Vehicle }) {
+export default function UserVehicleCard({ vehicle }: UserVehicleCardProps) {
   const { t } = useTranslation();
   const dispatch = useStoreDispatch();
 
-  // TODO UPDATE DELETE
   function handleDelete(id: number) {
     httpDeleteVehicle(id).then((vehicleId) =>
       dispatch(deleteVehicle(vehicleId))

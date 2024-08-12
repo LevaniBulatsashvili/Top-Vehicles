@@ -12,6 +12,9 @@ import {
 import { addVehicle, updateVehicle } from "../store/vehicleSlice";
 import validateVehicle from "../validations/validateVehicle";
 import { useTranslation } from "react-i18next";
+import ControlActions from "../components/UI/ControlActions";
+import Control from "../components/UI/Control";
+import FormDisplay from "../components/UI/FormDisplay";
 
 export default function UserVehiclePage() {
   const { t } = useTranslation();
@@ -60,9 +63,11 @@ export default function UserVehiclePage() {
 
   return (
     <Container>
-      <Form id={styles["form"]} onSubmit={handleSubmit}>
-        <div id={styles["display"]}>
-          <h1>{selectedVehicle ? t("Edit") : t("Post")}</h1>
+      <Form onSubmit={handleSubmit}>
+        <FormDisplay
+          title={selectedVehicle ? t("Edit") : t("Post")}
+          errors={errors}
+        >
           <input
             placeholder={t("Title")}
             defaultValue={selectedVehicle?.title}
@@ -85,29 +90,22 @@ export default function UserVehiclePage() {
             ref={priceRef}
           />
           <input hidden type="file" accept="image/*" ref={imageRef} />
-          <Button type="button" onClick={() => imageRef.current!.click()}>
+          <Button
+            id={styles["image-upload"]}
+            type="button"
+            onClick={() => imageRef.current!.click()}
+          >
             {t("Upload File")}
           </Button>
-          {errors.length > 0 && (
-            <div>
-              {errors.map((error) => (
-                <p key={error}>{t(error)}</p>
-              ))}
-            </div>
-          )}
-        </div>
+        </FormDisplay>
 
-        <div id={styles["control"]}>
-          <div>
-            <Button to="/user" type="button">
-              {t("Cancel")}
-            </Button>
-
-            <Button type="submit" disabled={isFetching}>
-              {selectedVehicle ? t("Edit") : t("Post")}
-            </Button>
-          </div>
-        </div>
+        <Control>
+          <ControlActions
+            onCancel="/user"
+            disabled={isFetching}
+            submitText={selectedVehicle ? t("Edit") : t("Post")}
+          />
+        </Control>
       </Form>
     </Container>
   );
