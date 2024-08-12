@@ -1,4 +1,4 @@
-import styles from "../../styles/Cards/userVehicleCard.module.scss";
+import styles from "../../styles/Cards/UserVehicleCard.module.scss";
 import img from "../../assets/placeholder.png";
 import type Vehicle from "../../types/Shared/Vehicle";
 import { useStoreDispatch } from "../../store/hooks";
